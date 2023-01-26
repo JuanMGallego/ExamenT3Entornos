@@ -9,12 +9,12 @@ package fraccion;
  */
 public class Fraccion {
 	/**
-	 * Variable global Numerador
+	 * Variable global Numerador para almacenar el numerador
 	 */
 	private int num;
 
 	/**
-	 * Variable global Denominador
+	 * Variable global Denominador para almacenar el denominador
 	 */
 	private int den;
 
@@ -43,7 +43,7 @@ public class Fraccion {
 		else
 			this.den = den;
 		/**
-		 * devuelvo la fracción simplificada
+		 * Devuelvo la fracción simplificada
 		 */
 		simplificar();
 	}
@@ -63,7 +63,7 @@ public class Fraccion {
 	 * 
 	 * getters y setters
 	 * 
-	 * @param num Parámetro de entrada de un número
+	 * @param num Parámetro de entrada del denominador
 	 */
 
 	public void setNum(int num) {
