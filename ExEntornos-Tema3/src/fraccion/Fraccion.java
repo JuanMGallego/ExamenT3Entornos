@@ -1,40 +1,70 @@
 package fraccion;
 
-// Clase que define una fracciÃ³n
+/**
+ * 
+ * Clase que define una fracción
+ * 
+ * @author jmgallego
+ *
+ */
 public class Fraccion {
-	// Numerador
+	/**
+	 * Variable global Numerador
+	 */
 	private int num;
 
-	// Denominador
+	/**
+	 * Variable global Denominador
+	 */
 	private int den;
 
-	// Constructor por defecto
-
+	/**
+	 * Constructor por defecto
+	 */
 	public Fraccion() { // debe generar el valor neutro que es 0/1
 		num = 0;
 		den = 1;
 
 	}
 
-	// Constructor con parÃ¡metros
+	/**
+	 * Constructor con parámetros
+	 * 
+	 * @param num Numerador de entrada
+	 * @param den Denominador de entrada
+	 */
 	public Fraccion(int num, int den) {
-		// debo evitar crear fracciones con 0 en el divisor
+		/**
+		 * debo evitar crear fracciones con 0 en el divisor
+		 */
 		this.num = num;
 		if (den == 0)
 			this.den = 1;
 		else
 			this.den = den;
-		// devuelvo la fracciï¿½n simplificada
+		/**
+		 * devuelvo la fracción simplificada
+		 */
 		simplificar();
 	}
 
-	// Constructor copia
+	/**
+	 * 
+	 * Constructor copia
+	 * 
+	 * @param f parámetro de entrada de fracción
+	 */
 	public Fraccion(final Fraccion f) {
 		num = f.num;
 		den = f.den;
 	}
 
-	// getters y setters
+	/**
+	 * 
+	 * getters y setters
+	 * 
+	 * @param num Parámetro de entrada de un número
+	 */
 
 	public void setNum(int num) {
 		this.num = num;
@@ -54,7 +84,12 @@ public class Fraccion {
 		return den;
 	}
 
-	// CÃ¡lculo del mÃ¡ximo comÃºn divisor por el algoritmo de Euclides
+	/**
+	 * 
+	 * Cálculo del máximo común divisor por el algoritmo de Euclides
+	 * 
+	 * @return u Devuelve el máximo común divisor
+	 */
 	private int mcd() {
 		int u = (Math.abs(num)); // valor absoluto del numerador
 		int v = (Math.abs(den)); // valor absoluto del denominador
@@ -70,14 +105,18 @@ public class Fraccion {
 		return u;
 	}
 
-	// mÃ©todo para simplificar fracciones
+	/**
+	 * Método para simplificar fracciones
+	 */
 	public void simplificar() {
 		int n = mcd();
 		num = num / n;
 		den = den / n;
 	}
 
-	// MÃ©todo toString
+	/**
+	 * Método toString
+	 */
 
 	public String toString() {
 		String mensaje = num + "/" + den;
@@ -85,7 +124,13 @@ public class Fraccion {
 
 	}
 
-	// suma de fracciones
+	/**
+	 * 
+	 * Suma de fracciones
+	 * 
+	 * @param f Parámetro de entrada de las fracciones
+	 * @return aux Devuelve el valor calculado en la suma después de simplificarlo
+	 */
 	public Fraccion sumar(Fraccion f) {
 		Fraccion aux = new Fraccion();
 		aux.num = num * f.den + den * f.num;
@@ -95,7 +140,13 @@ public class Fraccion {
 
 	}
 
-	// Restar fracciones
+	/**
+	 * 
+	 * Restar fracciones
+	 * 
+	 * @param f Parámetro de entrada de las funciones
+	 * @return aux Devuelve el valor calculado en la resta después de simplificarlo
+	 */
 
 	public Fraccion restar(Fraccion f) {
 		Fraccion aux = new Fraccion();
@@ -106,7 +157,13 @@ public class Fraccion {
 
 	}
 
-//Multiplicar fracciones
+	/**
+	 * 
+	 * Multiplicar fracciones
+	 * 
+	 * @param f Parámetro de entrada de las funciones
+	 * @return aux Devuelve el valor calculado en la multiplicación después de multiplicarlo.
+	 */
 
 	public Fraccion multiplicar(Fraccion f) {
 		Fraccion aux = new Fraccion();
@@ -117,7 +174,13 @@ public class Fraccion {
 
 	}
 
-//Dividir fracciones
+	/**
+	 * 
+	 * Dividir fracciones
+	 * 
+	 * @param f Parámetro de entrada de las funciones
+	 * @return aux Devuelve el valor calculado en la división después de multiplicarlo.
+	 */
 
 	public Fraccion dividir(Fraccion f) {
 		Fraccion aux = new Fraccion();
