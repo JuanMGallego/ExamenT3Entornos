@@ -71,15 +71,33 @@ public class Fraccion {
 
 	}
 
+	/**
+	 * 
+	 * Devuelve el numerador
+	 * 
+	 * @return num devuelve el Numerador
+	 */
 	public int getNum() {
 		return num;
 
 	}
 
+	/**
+	 * 
+	 * Iguala el valor de entrada del denominador
+	 * 
+	 * @param den Valor de entrada del denominador
+	 */
 	public void setDen(int den) {
 		this.den = den;
 	}
 
+	/**
+	 * 
+	 * Devuelve el valor del denomniador
+	 * 
+	 * @return den Devulve el denominador
+	 */
 	public int getDen() {
 		return den;
 	}
